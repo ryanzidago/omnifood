@@ -3,8 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="Omnifood is an AI-powered food subscription that will make you eat healthy again, 365 days per year. It is tailored to your personal tastes and nutritional needs."
+    />
     <!-- this following line is important for responsive web design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" href="img/favicon.png" />
+    <link rel="apple-touch-icon" href="img/favicon-192.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
 
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/general.css" />
@@ -35,7 +43,7 @@
       src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
     ></script>
 
-    <title>Document</title>
+    <title>Omnifood &mdash; Never cook again!</title>
   </head>
   <body>
     <header class="header">
@@ -93,11 +101,24 @@
             </div>
           </div>
           <div class="hero-img-box">
-            <img
-              src="img/hero.png"
-              alt="Woman enjoying food, meals in storage container"
-              class="hero-img"
-            />
+            <!--
+              Allows the browser to select which images
+              based on wether it is able to render it or not.
+              .webp is the better format (good quality relative to size)
+              but not all browsers support it
+              See https://caniuse.com/?search=webp
+
+            -->
+            <picture>
+              <source srcset="img/hero.webp" type="image/webp" />
+              <source srcset="img/hero-min.png" type="image/png" />
+
+              <img
+                src="img/hero-min.png"
+                alt="Woman enjoying food, meals in storage container"
+                class="hero-img"
+              />
+            </picture>
           </div>
         </div>
       </section>
@@ -526,13 +547,14 @@
                 first meal is on us!
               </p>
 
-              <form action="#" class="cta-form">
+              <form class="cta-form" name="sign-up" netlify>
                 <div class="">
                   <label for="full-name">Full Name</label>
                   <input
                     id="full-name"
                     type="text"
                     placeholder="John Smith"
+                    name="full-name"
                     required
                   />
                 </div>
@@ -543,13 +565,19 @@
                     id="email"
                     type="email"
                     placeholder="john.smith@email.com"
+                    name="email"
                     required
                   />
                 </div>
 
                 <div class="">
                   <label for="select-where">Where did you here from us?</label>
-                  <select name="" id="select-where" required>
+                  <select
+                    name=""
+                    id="select-where"
+                    name="select-where"
+                    required
+                  >
                     <option value="">Please chose one option:</option>
                     <option value="friends">Friends and family</option>
                     <option value="youtube">Youtube videos</option>
