@@ -1,47 +1,25 @@
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #fdf2e9;
-  /* for sticky nav later */
-  height: 9.6rem;
-  padding: 0 4.8rem;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.heading-primray,
-.heading-secondary,
-.heading-tertiary {
-  font-weight: 700;
-  letter-spacing: -0.5px;
-  line-height: 1.05;
+html {
+  font-size: 65.5%;
+  /* Does not work on Safari */
+  /* scroll-behavior: smooth; */
 }
 
-.heading-primary {
-  font-size: 5.2rem;
-  color: #333;
-  margin-bottom: 3.2rem;
-}
-
-.heading-secondary {
-  font-size: 4.4rem;
-  line-height: 1.2;
-  margin-bottom: 9.6rem;
-}
-
-.heading-tertiary {
-  font-size: 3rem;
-  line-height: 1.2;
-  margin-bottom: 3.2rem;
-}
-
-.subheading {
-  display: block;
-  font-size: 1.6rem;
-  font-weight: 500;
-  color: #cf711f;
-  text-transform: uppercase;
-  margin-bottom: 1.6rem;
-  letter-spacing: 0.75px;
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+  /* 
+  hide everything that is overflowing on the X (horizontal axis)
+  this is used for the .main-nav, hiding the nav on mobile devices
+  */
+  overflow-x: hidden;
 }
 
 .container {
@@ -54,7 +32,6 @@
   display: grid;
   column-gap: 6.4rem;
   row-gap: 9.6rem;
-  grid-template-columns: 1fr 1fr;
 }
 
 .grid:not(:last-child) {
